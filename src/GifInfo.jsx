@@ -1,10 +1,13 @@
 import React from 'react'
 
-function GifInfo(props){
-  console.log('This is props info: ', props.gif.data[[0]].url)
+const GifInfo = ({ gif })  => {
+  let url = ''
+  gif.data.forEach((element)=>{
+    url = element.images.original.url
+  })
   return  (
     <div>
-      <img src={props.gif.data[[0]].url} alt='gif'/>
+      <img src={url} alt=''/>
     </div>
   )  
 }
